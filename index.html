@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EVOLVIA integra datos, automatización e inteligencia artificial para convertir información en decisiones concretas.">
+  <meta name="theme-color" content="#f8fafc">
+  <title>EVOLVIA | Datos, automatización e IA</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172b3a;
+      --muted: #526575;
+      --blue: #1769aa;
+      --blue-dark: #124d7a;
+      --blue-soft: #eaf4fb;
+      --green: #267653;
+      --green-soft: #edf6f1;
+      --paper: #ffffff;
+      --canvas: #f5f8fa;
+      --border: #dce5eb;
+      --gold: #e9bd71;
+      --shadow: 0 14px 38px rgba(23, 43, 58, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    a:hover { color: var(--blue-dark); }
+    a:focus-visible { outline: 3px solid #efb84f; outline-offset: 4px; border-radius: 4px; }
+    .skip-link { position: absolute; top: -60px; left: 16px; z-index: 10; padding: 10px 14px; background: #fff; color: var(--ink); }
+    .skip-link:focus { top: 16px; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar { border-bottom: 1px solid var(--border); background: rgba(255,255,255,.94); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; }
+    .brand img { display: block; width: 170px; height: auto; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 650; }
+    .nav-links a { color: var(--ink); text-decoration: none; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-links a.button { color: #fff; }
+    .nav-links a.button:hover { color: #fff; }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; padding: 11px 19px; border: 1px solid var(--blue); border-radius: 7px; background: var(--blue); color: #fff; font-weight: 700; text-decoration: none; transition: background .18s ease, transform .18s ease; }
+    .button:hover { background: var(--blue-dark); color: #fff; transform: translateY(-1px); }
+    .button.secondary { background: transparent; color: var(--blue-dark); }
+    .button.secondary:hover { background: var(--blue-soft); color: var(--blue-dark); }
+    .hero { overflow: hidden; position: relative; padding: 86px 0 76px; background: linear-gradient(125deg, #f4f9fc 0%, #eaf4fb 58%, #f5f8fa 100%); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(270px, .78fr); gap: 64px; align-items: center; position: relative; z-index: 1; }
+    .eyebrow { margin: 0 0 14px; color: var(--blue-dark); font-size: 13px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 760px; margin-bottom: 18px; font-size: clamp(38px, 5.3vw, 62px); line-height: 1.08; letter-spacing: -.045em; }
+    .hero-copy { max-width: 650px; margin-bottom: 28px; color: #405768; font-size: 19px; line-height: 1.58; }
+    .hero-copy strong { color: var(--ink); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { border-left: 3px solid var(--gold); margin: 0; padding: 8px 0 8px 22px; color: var(--muted); font-size: 17px; }
+    .hero-note strong { display: block; margin-bottom: 7px; color: var(--ink); font-size: 20px; }
+    .quick-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 50px; }
+    .quick-point { display: flex; gap: 12px; padding: 18px 16px; border: 1px solid rgba(23,105,170,.15); border-radius: 8px; background: rgba(255,255,255,.7); }
+    .quick-icon { flex: 0 0 auto; font-size: 22px; }
+    .quick-point strong { display: block; margin-bottom: 3px; font-size: 15px; }
+    .quick-point span:last-child { display: block; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    section { padding: 82px 0; }
+    section.alt { background: var(--canvas); }
+    .section-heading { max-width: 720px; margin-bottom: 34px; }
+    .section-heading h2 { margin-bottom: 10px; font-size: clamp(29px, 3.6vw, 40px); line-height: 1.2; letter-spacing: -.03em; }
+    .section-heading p { margin-bottom: 0; color: var(--muted); font-size: 17px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service-card { padding: 25px 23px 22px; border: 1px solid var(--border); border-radius: 9px; background: var(--paper); box-shadow: 0 2px 9px rgba(23,43,58,.025); }
+    .service-card .icon { font-size: 24px; }
+    .service-card h3 { margin: 12px 0 8px; font-size: 19px; line-height: 1.3; }
+    .service-card p { margin: 0; color: var(--muted); font-size: 15px; }
+    .service-card b { color: var(--ink); }
+    .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 9px; background: #fff; overflow: hidden; }
+    .step { padding: 24px 20px; border-right: 1px solid var(--border); }
+    .step:last-child { border-right: 0; }
+    .step-num { display: block; margin-bottom: 10px; color: var(--blue); font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .step h3 { margin: 0 0 8px; font-size: 18px; }
+    .step p { margin: 0; color: var(--muted); font-size: 14px; }
+    .principle { margin: 26px 0 0; padding: 18px 22px; border-left: 3px solid var(--blue); background: var(--blue-soft); color: var(--blue-dark); font-size: 18px; font-weight: 700; }
+    .case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .case-card { padding: 26px; border: 1px solid var(--border); border-radius: 9px; background: #fff; }
+    .case-title { display: flex; align-items: center; gap: 11px; margin-bottom: 11px; }
+    .case-title span { font-size: 23px; }
+    .case-title h3 { margin: 0; font-size: 19px; }
+    .case-card p { margin: 0 0 13px; color: var(--muted); }
+    .result { margin: 0 !important; padding-top: 12px; border-top: 1px solid var(--border); color: var(--ink) !important; font-size: 14px; }
+    .why-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 56px; align-items: start; }
+    .why-grid .section-heading { margin: 0; }
+    .why-list { display: grid; gap: 17px; margin: 4px 0 0; padding: 0; list-style: none; }
+    .why-list li { position: relative; padding-left: 28px; color: var(--muted); }
+    .why-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--green); font-weight: 900; }
+    .why-list strong { color: var(--ink); }
+    .tech-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .tech-list li { padding: 8px 13px; border: 1px solid #d8e4eb; border-radius: 6px; background: #fff; color: #334c5d; font-size: 14px; font-weight: 650; }
+    .partner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 30px; padding: 30px; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
+    .partner h3 { margin: 0 0 8px; font-size: 21px; }
+    .partner p { max-width: 760px; margin: 0; color: var(--muted); }
+    .contact { padding: 76px 0; background: #153e5b; color: #fff; }
+    .contact-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 36px; align-items: center; }
+    .contact .eyebrow { color: #b5d8f0; }
+    .contact h2 { max-width: 680px; margin-bottom: 12px; font-size: clamp(31px, 4vw, 44px); line-height: 1.15; letter-spacing: -.03em; }
+    .contact p { max-width: 700px; margin-bottom: 0; color: #d9e7f0; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .contact .button { border-color: #fff; background: #fff; color: #153e5b; }
+    .contact .button:hover { background: #eaf4fb; }
+    .contact .button.secondary { border-color: rgba(255,255,255,.55); background: transparent; color: #fff; }
+    .contact .button.secondary:hover { background: rgba(255,255,255,.1); }
+    .footer { padding: 22px 0; color: var(--muted); font-size: 13px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    @media (max-width: 800px) {
+      .nav-links { gap: 15px; }
+      .nav-links a:not(.button) { display: none; }
+      .hero { padding: 64px 0 52px; }
+      .hero-grid, .why-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-note { max-width: 540px; }
+      .quick-points { margin-top: 34px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .process { grid-template-columns: repeat(2, 1fr); }
+      .step:nth-child(2) { border-right: 0; }
+      .step:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+      section { padding: 64px 0; }
+      .contact-inner { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .wrap { width: min(100% - 36px, 1120px); }
+      .nav { min-height: 68px; }
+      .brand img { width: 143px; }
+      .nav .button { min-height: 42px; padding: 8px 12px; font-size: 13px; }
+      .hero { padding: 52px 0 42px; }
+      h1 { font-size: 40px; }
+      .hero-copy { font-size: 17px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .button { width: 100%; }
+      .quick-points, .service-grid, .case-grid { grid-template-columns: 1fr; }
+      .quick-points { gap: 10px; }
+      .quick-point { padding: 14px; }
+      section { padding: 54px 0; }
+      .section-heading { margin-bottom: 25px; }
+      .process { grid-template-columns: 1fr; }
+      .step, .step:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--border); }
+      .step:last-child { border-bottom: 0; }
+      .partner { grid-template-columns: 1fr; padding: 23px; }
+      .partner .button { width: 100%; }
+      .contact { padding: 58px 0; }
+      .contact-links { flex-direction: column; align-items: stretch; }
+      .contact-links .button { width: 100%; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="EVOLVIA, inicio"><img src="EVOLVIA-Marquesina.svg" alt="EVOLVIA"></a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#casos">Casos</a>
+        <a class="button" href="https://cal.com/oscar-mengoni-mengo-bt1vxl" target="_blank" rel="noopener noreferrer">Agendá una reunión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Datos · Automatización · Inteligencia artificial</p>
+            <h1>Decisiones que hacen avanzar tu negocio.</h1>
+            <p class="hero-copy">Ayudamos a <strong>PyMEs, consultoras y empresas</strong> a integrar información, reducir tareas manuales y convertir sus datos en decisiones concretas.</p>
+            <div class="hero-actions">
+              <a class="button" href="https://cal.com/oscar-mengoni-mengo-bt1vxl" target="_blank" rel="noopener noreferrer">Reservá una reunión exploratoria <span aria-hidden="true">→</span></a>
+              <a class="button secondary" href="#servicios">Conocé cómo podemos ayudarte</a>
+            </div>
+          </div>
+          <p class="hero-note"><strong>Menos complejidad.</strong>Más claridad, control y capacidad de acción.</p>
+        </div>
+        <div class="quick-points" aria-label="Áreas de trabajo">
+          <div class="quick-point"><span class="quick-icon" aria-hidden="true">📊</span><div><strong>Datos confiables</strong><span>Integramos ERP, Excel, bases de datos, APIs y sistemas internos.</span></div></div>
+          <div class="quick-point"><span class="quick-icon" aria-hidden="true">⚙️</span><div><strong>Procesos ágiles</strong><span>Automatizamos tareas repetitivas para reducir tiempos y errores.</span></div></div>
+          <div class="quick-point"><span class="quick-icon" aria-hidden="true">🤖</span><div><strong>IA aplicada</strong><span>Llevamos la inteligencia artificial a problemas reales del negocio.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Servicios</p>
+          <h2>Cómo podemos ayudarte</h2>
+          <p>Empezamos por entender la necesidad del negocio y diseñamos una solución útil, viable y alineada con tu equipo.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><span class="icon" aria-hidden="true">📈</span><h3>Business Intelligence</h3><p>Dashboards ejecutivos y operativos en Power BI para Dirección, Comercial, Producción, Finanzas, Compras y RR. HH.<br><br><b>Ideal para:</b> centralizar indicadores y tomar decisiones con información actualizada.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🔗</span><h3>Integración de datos</h3><p>Conectamos Odoo, SIFAB, SQL Server, Access, Excel, CSV, APIs y otras fuentes.<br><br><b>Ideal para:</b> eliminar silos y construir una única versión de la información.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🧭</span><h3>Consultoría de procesos</h3><p>Analizamos procesos, definimos indicadores y diseñamos una hoja de ruta viable.<br><br><b>Ideal para:</b> identificar oportunidades y priorizar inversiones.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">⚙️</span><h3>Automatización</h3><p>Implementamos procesos automáticos con Python, Power BI Service, Make y n8n.<br><br><b>Ideal para:</b> reducir carga manual, demoras y errores repetitivos.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🤖</span><h3>Inteligencia Artificial aplicada</h3><p>Creamos agentes y automatizaciones inteligentes para consultas, análisis y soporte operativo.<br><br><b>Ideal para:</b> agilizar el acceso al conocimiento y asistir tareas del equipo.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🛠️</span><h3>Gestión del ecosistema analítico</h3><p>Administramos gateways, usuarios, permisos, licencias, modelos semánticos, Azure y Power BI Service.<br><br><b>Ideal para:</b> asegurar continuidad, trazabilidad y gobierno.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="metodo">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Nuestro método</p><h2>De la necesidad a una solución útil</h2></div>
+        <div class="process">
+          <article class="step"><span class="step-num">01 · Diagnóstico</span><h3>Entendemos</h3><p>Relevamos procesos, datos, dolores y objetivos.</p></article>
+          <article class="step"><span class="step-num">02 · Diseño</span><h3>Priorizamos</h3><p>Definimos oportunidades, alcance y una hoja de ruta.</p></article>
+          <article class="step"><span class="step-num">03 · Implementación</span><h3>Construimos</h3><p>Integramos, desarrollamos y validamos la solución.</p></article>
+          <article class="step"><span class="step-num">04 · Evolución</span><h3>Acompañamos</h3><p>Capacitamos, damos soporte y mejoramos.</p></article>
+        </div>
+        <p class="principle">Empezamos por el problema del negocio y elegimos la tecnología después.</p>
+      </div>
+    </section>
+
+    <section id="casos">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Experiencia aplicada</p><h2>Casos de uso</h2></div>
+        <div class="case-grid">
+          <article class="case-card"><div class="case-title"><span aria-hidden="true">🏭</span><h3>Ecosistema BI industrial</h3></div><p>Integración de ERP, sistemas productivos, SQL Server, Access y Excel en modelos centralizados de Power BI.</p><p class="result"><b>Resultado:</b> información confiable para Dirección, Comercial, Producción, Finanzas y RR. HH.</p></article>
+          <article class="case-card"><div class="case-title"><span aria-hidden="true">☁️</span><h3>Administración analítica</h3></div><p>Gestión de Power BI Service, Azure, máquinas virtuales, gateways, permisos, licencias y modelos semánticos.</p><p class="result"><b>Resultado:</b> continuidad operativa, trazabilidad y control.</p></article>
+          <article class="case-card"><div class="case-title"><span aria-hidden="true">🔄</span><h3>Automatización Odoo → Python → Power BI</h3></div><p>Extracción y transformación automática de datos para alimentar modelos analíticos.</p><p class="result"><b>Resultado:</b> reportes recurrentes y menor dependencia de tareas manuales.</p></article>
+          <article class="case-card"><div class="case-title"><span aria-hidden="true">🧠</span><h3>IA para procesos internos</h3></div><p>Agentes y automatizaciones para consultas, soporte interno y análisis de información.</p><p class="result"><b>Resultado:</b> mayor agilidad y mejor acceso a información operativa.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="evolvia">
+      <div class="wrap why-grid">
+        <div class="section-heading"><p class="eyebrow">EVOLVIA</p><h2>Una mirada integral, con foco en lo práctico.</h2><p>Más de 25 años combinando procesos productivos, gestión, sistemas y datos.</p></div>
+        <ul class="why-list">
+          <li><strong>Experiencia aplicada:</strong> procesos productivos, gestión, sistemas y datos en conjunto.</li>
+          <li><strong>Visión integral:</strong> negocio, procesos, información, automatización e inteligencia artificial.</li>
+          <li><strong>Enfoque práctico:</strong> soluciones realistas, utilizables y alineadas con cada organización.</li>
+          <li><strong>Cercanía:</strong> acompañamiento desde el diagnóstico hasta la adopción por parte de los equipos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="tecnologias">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Herramientas</p><h2>Tecnologías</h2></div>
+        <ul class="tech-list">
+          <li>Power BI</li><li>Power BI Service</li><li>Python</li><li>pandas</li><li>SQL Server</li><li>Odoo</li><li>SIFAB</li><li>Access</li><li>Excel</li><li>Azure</li><li>GitHub</li><li>APIs</li><li>Copilot</li><li>Agentes IA</li><li>Make</li><li>n8n</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="alt" id="alianza">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">Alianza estratégica</p><h2>Infraestructura que acompaña</h2></div>
+        <div class="partner"><div><h3>Silicon-Tech S.A.</h3><p>Representación comercial autorizada en soluciones de infraestructura TI. Empresa argentina especializada en comercialización y soporte de servidores, redes e infraestructura, con foco en soluciones HP y HPE.</p></div><a class="button secondary" href="https://www.silicon-tech.com.ar/" target="_blank" rel="noopener noreferrer">Conocer Silicon-Tech <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="wrap contact-inner">
+        <div><p class="eyebrow">Oscar Mengoni · EVOLVIA</p><h2>Conversemos sobre tu próximo desafío.</h2><p>Una primera conversación puede ayudarte a identificar oportunidades concretas en datos, procesos, automatización e IA.</p><div class="contact-links"><a class="button" href="https://cal.com/oscar-mengoni-mengo-bt1vxl" target="_blank" rel="noopener noreferrer">Reservar una reunión</a><a class="button secondary" href="https://wa.me/541140899448" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="button secondary" href="mailto:omengoni@gmail.com">Enviar un email</a></div></div>
+        <span aria-hidden="true" style="font-size:64px;opacity:.75">↗</span>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© EVOLVIA · Datos, automatización e IA</span><a href="#inicio">Volver arriba ↑</a></div></footer>
+</body>
+</html>
