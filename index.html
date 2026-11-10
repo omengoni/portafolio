@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="EVOLVIA integra datos, automatización e inteligencia artificial para convertir información en decisiones concretas.">
+  <meta name="description" content="EVOLVIA desarrolla software industrial con inteligencia artificial para conectar máquinas, objetivos, capacitación y datos.">
   <meta name="theme-color" content="#f8fafc">
-  <title>EVOLVIA | Datos, automatización e IA</title>
+  <title>EVOLVIA | Software industrial con IA</title>
   <style>
     :root {
       color-scheme: light;
@@ -37,14 +37,15 @@
     .skip-link:focus { top: 16px; }
     .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
     .topbar { border-bottom: 1px solid var(--border); background: rgba(255,255,255,.94); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav { min-height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display: inline-flex; align-items: center; }
-    .brand img { display: block; width: 170px; height: auto; }
+    .brand img { display: block; width: 310px; height: auto; border-radius: 4px; box-shadow: 0 4px 14px rgba(23, 43, 58, .11); }
     .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 650; }
     .nav-links a { color: var(--ink); text-decoration: none; }
     .nav-links a:hover { color: var(--blue); }
     .nav-links a.button { color: #fff; }
     .nav-links a.button:hover { color: #fff; }
+    .nav-cta-short { display: none; }
     .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; padding: 11px 19px; border: 1px solid var(--blue); border-radius: 7px; background: var(--blue); color: #fff; font-weight: 700; text-decoration: none; transition: background .18s ease, transform .18s ease; }
     .button:hover { background: var(--blue-dark); color: #fff; transform: translateY(-1px); }
     .button.secondary { background: transparent; color: var(--blue-dark); }
@@ -129,9 +130,11 @@
     @media (max-width: 560px) {
       body { font-size: 16px; }
       .wrap { width: min(100% - 36px, 1120px); }
-      .nav { min-height: 68px; }
-      .brand img { width: 143px; }
-      .nav .button { min-height: 42px; padding: 8px 12px; font-size: 13px; }
+      .nav { min-height: 80px; }
+      .brand img { width: 180px; }
+      .nav .button { min-height: 42px; padding: 8px 12px; font-size: 14px; }
+      .nav-cta-full { display: none; }
+      .nav-cta-short { display: inline; }
       .hero { padding: 52px 0 42px; }
       h1 { font-size: 40px; }
       .hero-copy { font-size: 17px; }
@@ -152,6 +155,10 @@
       .contact-links .button { width: 100%; }
       .footer-inner { flex-direction: column; }
     }
+    @media (max-width: 380px) {
+      .brand img { width: 160px; }
+      .nav .button { padding: 7px 9px; font-size: 12px; }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
@@ -165,7 +172,7 @@
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#casos">Casos</a>
-        <a class="button" href="https://cal.com/oscar-mengoni-mengo-bt1vxl" target="_blank" rel="noopener noreferrer">Agendá una reunión</a>
+        <a class="button" href="https://cal.com/oscar-mengoni-mengo-bt1vxl" target="_blank" rel="noopener noreferrer"><span class="nav-cta-full">Agendá una reunión</span><span class="nav-cta-short">Agendá</span></a>
       </nav>
     </div>
   </header>
@@ -175,20 +182,20 @@
       <div class="wrap">
         <div class="hero-grid">
           <div>
-            <p class="eyebrow">Datos · Automatización · Inteligencia artificial</p>
-            <h1>Decisiones que hacen avanzar tu negocio.</h1>
-            <p class="hero-copy">Ayudamos a <strong>PyMEs, consultoras y empresas</strong> a integrar información, reducir tareas manuales y convertir sus datos en decisiones concretas.</p>
+            <p class="eyebrow">Software con IA · Industria conectada · Datos integrados</p>
+            <h1>Software con IA para una industria más conectada.</h1>
+            <p class="hero-copy">Diseñamos <strong>software con inteligencia artificial</strong> para conectar máquinas en producción, objetivos de gestión y capacitación. Los datos y la analítica son la base que integra cada solución y convierte la operación en decisiones concretas.</p>
             <div class="hero-actions">
               <a class="button" href="https://cal.com/oscar-mengoni-mengo-bt1vxl" target="_blank" rel="noopener noreferrer">Reservá una reunión exploratoria <span aria-hidden="true">→</span></a>
-              <a class="button secondary" href="#servicios">Conocé cómo podemos ayudarte</a>
+              <a class="button secondary" href="#servicios">Conocé nuestras soluciones</a>
             </div>
           </div>
-          <p class="hero-note"><strong>Menos complejidad.</strong>Más claridad, control y capacidad de acción.</p>
+          <p class="hero-note"><strong>Máquinas monitoreadas.</strong>Objetivos visibles, equipos capacitados y todo conectado.</p>
         </div>
         <div class="quick-points" aria-label="Áreas de trabajo">
-          <div class="quick-point"><span class="quick-icon" aria-hidden="true">📊</span><div><strong>Datos confiables</strong><span>Integramos ERP, Excel, bases de datos, APIs y sistemas internos.</span></div></div>
-          <div class="quick-point"><span class="quick-icon" aria-hidden="true">⚙️</span><div><strong>Procesos ágiles</strong><span>Automatizamos tareas repetitivas para reducir tiempos y errores.</span></div></div>
-          <div class="quick-point"><span class="quick-icon" aria-hidden="true">🤖</span><div><strong>IA aplicada</strong><span>Llevamos la inteligencia artificial a problemas reales del negocio.</span></div></div>
+          <div class="quick-point"><span class="quick-icon" aria-hidden="true">🤖</span><div><strong>Software con IA</strong><span>Soluciones inteligentes para procesos y desafíos reales del negocio.</span></div></div>
+          <div class="quick-point"><span class="quick-icon" aria-hidden="true">🏭</span><div><strong>Industria conectada</strong><span>Máquinas, producción y gestión con mayor visibilidad.</span></div></div>
+          <div class="quick-point"><span class="quick-icon" aria-hidden="true">📊</span><div><strong>Datos integrados</strong><span>Información conectada para apoyar las soluciones y las decisiones.</span></div></div>
         </div>
       </div>
     </section>
@@ -197,16 +204,16 @@
       <div class="wrap">
         <div class="section-heading">
           <p class="eyebrow">Servicios</p>
-          <h2>Cómo podemos ayudarte</h2>
-          <p>Empezamos por entender la necesidad del negocio y diseñamos una solución útil, viable y alineada con tu equipo.</p>
+          <h2>Software industrial, IA y datos conectados</h2>
+          <p>Conectamos la operación de planta, los objetivos del negocio y la capacitación de las personas. El software con IA es el eje; los datos y la analítica acompañan cada solución.</p>
         </div>
         <div class="service-grid">
-          <article class="service-card"><span class="icon" aria-hidden="true">📈</span><h3>Business Intelligence</h3><p>Dashboards ejecutivos y operativos en Power BI para Dirección, Comercial, Producción, Finanzas, Compras y RR. HH.<br><br><b>Ideal para:</b> centralizar indicadores y tomar decisiones con información actualizada.</p></article>
-          <article class="service-card"><span class="icon" aria-hidden="true">🔗</span><h3>Integración de datos</h3><p>Conectamos Odoo, SIFAB, SQL Server, Access, Excel, CSV, APIs y otras fuentes.<br><br><b>Ideal para:</b> eliminar silos y construir una única versión de la información.</p></article>
-          <article class="service-card"><span class="icon" aria-hidden="true">🧭</span><h3>Consultoría de procesos</h3><p>Analizamos procesos, definimos indicadores y diseñamos una hoja de ruta viable.<br><br><b>Ideal para:</b> identificar oportunidades y priorizar inversiones.</p></article>
-          <article class="service-card"><span class="icon" aria-hidden="true">⚙️</span><h3>Automatización</h3><p>Implementamos procesos automáticos con Python, Power BI Service, Make y n8n.<br><br><b>Ideal para:</b> reducir carga manual, demoras y errores repetitivos.</p></article>
-          <article class="service-card"><span class="icon" aria-hidden="true">🤖</span><h3>Inteligencia Artificial aplicada</h3><p>Creamos agentes y automatizaciones inteligentes para consultas, análisis y soporte operativo.<br><br><b>Ideal para:</b> agilizar el acceso al conocimiento y asistir tareas del equipo.</p></article>
-          <article class="service-card"><span class="icon" aria-hidden="true">🛠️</span><h3>Gestión del ecosistema analítico</h3><p>Administramos gateways, usuarios, permisos, licencias, modelos semánticos, Azure y Power BI Service.<br><br><b>Ideal para:</b> asegurar continuidad, trazabilidad y gobierno.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🤖</span><h3>Software con inteligencia artificial</h3><p>Desarrollamos software, asistentes y automatizaciones inteligentes para procesos industriales y de gestión.<br><br><b>Ideal para:</b> resolver necesidades concretas y conectar herramientas con el trabajo diario.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🏭</span><h3>Monitoreo de máquinas en producción</h3><p>Integramos información de máquinas y procesos para visualizar actividad, paradas y evolución de la producción.<br><br><b>Ideal para:</b> tener mayor visibilidad de planta y detectar desvíos a tiempo.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🎯</span><h3>Tablero de objetivos</h3><p>Conectamos objetivos con indicadores, metas, avances y desvíos para acompañar el seguimiento de la gestión.<br><br><b>Ideal para:</b> alinear la operación con las prioridades del negocio.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🎓</span><h3>Campus de capacitaciones y cursos</h3><p>Organizamos cursos y contenidos en un campus conectado con los procesos, las herramientas y las necesidades de cada equipo.<br><br><b>Ideal para:</b> facilitar el aprendizaje continuo y acompañar la adopción de las soluciones.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">🔗</span><h3>Integración de sistemas y datos</h3><p>Conectamos Odoo, SIFAB, SQL Server, Access, Excel, CSV, APIs y otras fuentes.<br><br><b>Ideal para:</b> dar una base común a las soluciones y evitar información aislada.</p></article>
+          <article class="service-card"><span class="icon" aria-hidden="true">📊</span><h3>Analítica y Business Intelligence</h3><p>Creamos tableros operativos y ejecutivos en Power BI para producción, dirección, comercial, finanzas y otras áreas.<br><br><b>Ideal para:</b> convertir datos integrados en información útil para decidir.</p></article>
         </div>
       </div>
     </section>
@@ -228,21 +235,21 @@
       <div class="wrap">
         <div class="section-heading"><p class="eyebrow">Experiencia aplicada</p><h2>Casos de uso</h2></div>
         <div class="case-grid">
-          <article class="case-card"><div class="case-title"><span aria-hidden="true">🏭</span><h3>Ecosistema BI industrial</h3></div><p>Integración de ERP, sistemas productivos, SQL Server, Access y Excel en modelos centralizados de Power BI.</p><p class="result"><b>Resultado:</b> información confiable para Dirección, Comercial, Producción, Finanzas y RR. HH.</p></article>
-          <article class="case-card"><div class="case-title"><span aria-hidden="true">☁️</span><h3>Administración analítica</h3></div><p>Gestión de Power BI Service, Azure, máquinas virtuales, gateways, permisos, licencias y modelos semánticos.</p><p class="result"><b>Resultado:</b> continuidad operativa, trazabilidad y control.</p></article>
-          <article class="case-card"><div class="case-title"><span aria-hidden="true">🔄</span><h3>Automatización Odoo → Python → Power BI</h3></div><p>Extracción y transformación automática de datos para alimentar modelos analíticos.</p><p class="result"><b>Resultado:</b> reportes recurrentes y menor dependencia de tareas manuales.</p></article>
-          <article class="case-card"><div class="case-title"><span aria-hidden="true">🧠</span><h3>IA para procesos internos</h3></div><p>Agentes y automatizaciones para consultas, soporte interno y análisis de información.</p><p class="result"><b>Resultado:</b> mayor agilidad y mejor acceso a información operativa.</p></article>
+          <article class="case-card"><div class="case-title"><span aria-hidden="true">🏭</span><h3>Monitoreo de máquinas y producción</h3></div><p>Conectamos información de máquinas y procesos para visualizar la actividad y las paradas en planta.</p><p class="result"><b>Enfoque:</b> dar contexto operativo y apoyar una respuesta más oportuna ante desvíos.</p></article>
+          <article class="case-card"><div class="case-title"><span aria-hidden="true">🎯</span><h3>Objetivos vinculados a la operación</h3></div><p>Tableros que conectan metas de gestión con indicadores y avances de producción.</p><p class="result"><b>Enfoque:</b> mantener visibles las prioridades y facilitar el seguimiento.</p></article>
+          <article class="case-card"><div class="case-title"><span aria-hidden="true">🎓</span><h3>Campus de formación</h3></div><p>Cursos y capacitaciones conectados con los procesos y las herramientas de trabajo.</p><p class="result"><b>Enfoque:</b> acompañar el desarrollo de los equipos y la adopción de mejoras.</p></article>
+          <article class="case-card"><div class="case-title"><span aria-hidden="true">🔗</span><h3>Software, IA y datos integrados</h3></div><p>Soluciones inteligentes que conectan información, automatizaciones y necesidades de cada área.</p><p class="result"><b>Enfoque:</b> un ecosistema coherente, no herramientas aisladas.</p></article>
         </div>
       </div>
     </section>
 
     <section class="alt" id="evolvia">
       <div class="wrap why-grid">
-        <div class="section-heading"><p class="eyebrow">EVOLVIA</p><h2>Una mirada integral, con foco en lo práctico.</h2><p>Más de 25 años combinando procesos productivos, gestión, sistemas y datos.</p></div>
+        <div class="section-heading"><p class="eyebrow">EVOLVIA</p><h2>Una mirada industrial, con foco en lo conectado.</h2><p>Más de 25 años combinando procesos productivos, gestión, sistemas y datos.</p></div>
         <ul class="why-list">
           <li><strong>Experiencia aplicada:</strong> procesos productivos, gestión, sistemas y datos en conjunto.</li>
-          <li><strong>Visión integral:</strong> negocio, procesos, información, automatización e inteligencia artificial.</li>
-          <li><strong>Enfoque práctico:</strong> soluciones realistas, utilizables y alineadas con cada organización.</li>
+          <li><strong>Visión industrial:</strong> conectamos planta, objetivos, software y capacitación.</li>
+          <li><strong>Enfoque práctico:</strong> soluciones realistas, utilizables e integradas con cada organización.</li>
           <li><strong>Cercanía:</strong> acompañamiento desde el diagnóstico hasta la adopción por parte de los equipos.</li>
         </ul>
       </div>
@@ -252,7 +259,7 @@
       <div class="wrap">
         <div class="section-heading"><p class="eyebrow">Herramientas</p><h2>Tecnologías</h2></div>
         <ul class="tech-list">
-          <li>Power BI</li><li>Power BI Service</li><li>Python</li><li>pandas</li><li>SQL Server</li><li>Odoo</li><li>SIFAB</li><li>Access</li><li>Excel</li><li>Azure</li><li>GitHub</li><li>APIs</li><li>Copilot</li><li>Agentes IA</li><li>Make</li><li>n8n</li>
+          <li>Software industrial</li><li>IA aplicada</li><li>Power BI</li><li>Python</li><li>SQL Server</li><li>Odoo</li><li>SIFAB</li><li>Access</li><li>Excel</li><li>Azure</li><li>APIs</li><li>Agentes IA</li><li>Make</li><li>n8n</li>
         </ul>
       </div>
     </section>
@@ -266,11 +273,11 @@
 
     <section class="contact" id="contacto">
       <div class="wrap contact-inner">
-        <div><p class="eyebrow">Oscar Mengoni · EVOLVIA</p><h2>Conversemos sobre tu próximo desafío.</h2><p>Una primera conversación puede ayudarte a identificar oportunidades concretas en datos, procesos, automatización e IA.</p><div class="contact-links"><a class="button" href="https://cal.com/oscar-mengoni-mengo-bt1vxl" target="_blank" rel="noopener noreferrer">Reservar una reunión</a><a class="button secondary" href="https://wa.me/541140899448" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="button secondary" href="mailto:omengoni@gmail.com">Enviar un email</a></div></div>
+        <div><p class="eyebrow">Oscar Mengoni · EVOLVIA</p><h2>Conectemos tu planta, tus objetivos y tu equipo.</h2><p>Una primera conversación puede ayudarnos a identificar cómo integrar software con IA, monitoreo de producción, tableros de objetivos y capacitación.</p><div class="contact-links"><a class="button" href="https://cal.com/oscar-mengoni-mengo-bt1vxl" target="_blank" rel="noopener noreferrer">Reservar una reunión</a><a class="button secondary" href="https://wa.me/541140899448" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="button secondary" href="mailto:omengoni@gmail.com">Enviar un email</a></div></div>
         <span aria-hidden="true" style="font-size:64px;opacity:.75">↗</span>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="wrap footer-inner"><span>© EVOLVIA · Datos, automatización e IA</span><a href="#inicio">Volver arriba ↑</a></div></footer>
+  <footer class="footer"><div class="wrap footer-inner"><span>© EVOLVIA · Software con IA · Industria conectada · Datos</span><a href="#inicio">Volver arriba ↑</a></div></footer>
 </body>
 </html>
